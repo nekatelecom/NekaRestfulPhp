@@ -1,0 +1,26 @@
+{
+    "name": "jacwright/restserver",
+    "version": "1.0.1",
+    "type": "library",
+    "description": "php rest client for nekatelecom REST APIs",
+    "keywords": ["php", "rest", "rest-client", "nekatelecom", "http", "json", "mit"],
+    "homepage": "https://github.com/nekatelecom/NekaRestfulPhp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mahmoud Eskandari",
+            "email": "info@webafrooz.com",
+            "homepage": "http://webafrooz.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Neka": ""
+        }
+    }
+}
