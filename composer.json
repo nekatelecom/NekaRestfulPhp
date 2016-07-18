@@ -1,5 +1,5 @@
 {
-    "name": "jacwright/restserver",
+    "name": "neka/restclient",
     "version": "1.0.1",
     "type": "library",
     "description": "php rest client for nekatelecom REST APIs",
