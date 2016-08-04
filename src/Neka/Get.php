@@ -16,4 +16,9 @@ class InternetPackages{
     	$response = \Httpful\Request::post(api_url ."packages/internet?format=json")->authenticateWith(api_username, api_password)->send();
 		return @json_decode($response,true);
     }
+	
+    static  function pin_products(){
+    	$response = \Httpful\Request::post(api_url ."packages/pin_products?format=json")->authenticateWith(api_username, api_password)->send();
+		return @json_decode($response,true);
+    }
 }
