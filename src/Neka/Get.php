@@ -11,7 +11,7 @@
  */
 namespace Neka;
 
-class InternetPackages{
+class Get{
     public static  function internet_packages(){
     	$response = \Httpful\Request::post(api_url ."packages/internet?format=json")->authenticateWith(api_username, api_password)->send();
 		return @json_decode($response,true);
