@@ -51,7 +51,7 @@ class Topup{
      * @param int $try
      * @return bool|array
      */
-    private static function request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false,$try = 1){
+    private static function request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false,$internet_package_code = false,$try = 1){
         //Reset Response
         Topup::$response = '';
         //Request Array
@@ -65,6 +65,9 @@ class Topup{
         //
         if(!empty($sell_type))
             $request['extra']['sell_type'] = $sell_type;
+		//
+        if(!empty($internet_package_code))
+            $request['extra']['internet'] = $internet_package_code;
 
         if($operator != 'None')
             $request['operator'] = $operator;
@@ -100,7 +103,7 @@ class Topup{
         }
         //Retry new request
         $try++;
-        return Topup::request($sim_number,$amount,$operator,$seller_name,$sell_type,$amazing,$try);
+        return Topup::request($sim_number,$amount,$operator,$seller_name,$sell_type,$amazing,$internet_package_code,$try);
     }
 
     /**
