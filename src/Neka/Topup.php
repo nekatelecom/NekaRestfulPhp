@@ -37,7 +37,7 @@ class Topup{
      * @return bool
      */
     public static  function buy_request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false){
-        Topup::$transaction = md5(microtime(true));
+        Topup::$transaction = md5(microtime(true).rand(10,10000));
         return Topup::request($sim_number,$amount,$operator,$seller_name,$sell_type,$amazing);
     }
 
