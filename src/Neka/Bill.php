@@ -73,7 +73,19 @@ class Bill{
         return Bill::Pay_bill($bill_number,$payment_number,$try);
     }
 
-
+    /**
+     * @param $bill_number
+     * @param $payment_number
+     * @return mixed
+     */
+    static function check_bill($bill_number,$payment_number){
+        $response = \Httpful\Request::post(api_url ."bill/check?format=json")
+            ->authenticateWith(api_username, api_password)
+            ->sendsJson()
+            ->body(json_encode(['payment_number' => $payment_number,'bill_number' => $bill_number]))
+            ->send();
+        return @json_decode($response,true);
+    }
     /**
      * @param int $try
      * @return bool|int|array
