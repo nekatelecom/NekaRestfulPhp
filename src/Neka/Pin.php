@@ -47,7 +47,7 @@ class Pin{
         if($reset)
             Pin::$request_list = [];
         //
-        Pin::$transaction = md5(microtime(true));
+        Pin::$transaction = md5(microtime(true).rand(10,10000));
     }
 
     /**
