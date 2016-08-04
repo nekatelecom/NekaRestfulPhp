@@ -28,11 +28,11 @@ class Topup{
     public static  $response    = "";
 
     /**
-     * @param $sim_number
-     * @param $amount
+     * @param string $sim_number
+     * @param integer $amount
      * @param string $operator
-     * @param null $seller_name
-     * @param null $sell_type
+     * @param string $seller_name
+     * @param string $sell_type
      * @param bool $amazing
      * @return bool
      */
@@ -42,14 +42,14 @@ class Topup{
     }
 
     /**
-     * @param $sim_number
-     * @param $amount
+     * @param string $sim_number
+     * @param integer $amount
      * @param string $operator
-     * @param null $seller_name
-     * @param null $sell_type
+     * @param string $seller_name
+     * @param string $sell_type
      * @param bool $amazing
      * @param int $try
-     * @return bool
+     * @return bool|array
      */
     private static function request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false,$try = 1){
         //Reset Response
