@@ -34,11 +34,12 @@ class Topup{
      * @param string $seller_name
      * @param string $sell_type
      * @param bool $amazing
+     * @param string $internet
      * @return bool
      */
-    public static  function buy_request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false){
+    public static  function buy_request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false,$internet = ''){
         Topup::$transaction = md5(microtime(true).rand(10,10000));
-        return Topup::request($sim_number,$amount,$operator,$seller_name,$sell_type,$amazing);
+        return Topup::request($sim_number,$amount,$operator,$seller_name,$sell_type,$amazing,$internet);
     }
 
     /**
@@ -48,10 +49,11 @@ class Topup{
      * @param string $seller_name
      * @param string $sell_type
      * @param bool $amazing
+     * @param string $internet_package_code
      * @param int $try
      * @return bool|array
      */
-    private static function request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false,$internet_package_code = false,$try = 1){
+    private static function request($sim_number,$amount,$operator = 'None',$seller_name = null,$sell_type = null,$amazing = false,$internet_package_code = '',$try = 1){
         //Reset Response
         Topup::$response = '';
         //Request Array
